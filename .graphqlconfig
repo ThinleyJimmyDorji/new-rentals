@@ -1,0 +1,17 @@
+{
+  "name": "Whs GraphQL Schema",
+  "schemaPath": "schema.graphql",
+  "extensions": {
+    "endpoints": {
+      "Staging": {
+        "url": "",
+        "headers": {
+          "user-agent": "JS GraphQL",
+          "Authorization": ""
+        },
+        "introspect": true
+      }
+    }
+  }
+}
+
