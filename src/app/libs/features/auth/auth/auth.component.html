@@ -1,0 +1,8 @@
+<div [ngSwitch]="componentType">
+  <app-login
+    *ngSwitchCase="'login'"
+  ></app-login>
+  <app-signup
+    *ngSwitchCase="'signup'"
+  ></app-signup>
+</div>
