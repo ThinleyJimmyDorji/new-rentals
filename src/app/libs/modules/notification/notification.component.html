@@ -1,0 +1,15 @@
+<div class="whs-notification" [ngClass]="data.type + '_type'">
+  <div fxLayout="column">
+    <div fxLayout="row wrap">
+      <div fxFlex="10">
+        <mat-icon [ngClass]="data.iconColor">{{ data.iconType }}</mat-icon>
+      </div>
+      <div fxFlex="80">
+        <span [innerHTML]="data.translate ? (data.message) : (data.message | uppercase | translate)"></span>
+      </div>
+      <div fxFlex="10" (click)="closeSnackbar()">
+        <mat-icon>close</mat-icon>
+      </div>
+    </div>
+  </div>
+</div>
