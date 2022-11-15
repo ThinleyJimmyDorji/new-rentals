@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {AuthComponent} from "./libs/features/auth/auth/auth.component";
 import {AuthEnum} from "./libs/features/auth/models/auth.model";
 import {AuthWrapperComponent} from "./libs/features/auth/auth/auth-wrapper/auth-wrapper.component";
 
@@ -12,14 +11,14 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: AuthComponent,
+        loadComponent: () => import('../app/libs/features/auth/auth/auth.component').then((c => c.AuthComponent)),
         data: {
           TYPE: AuthEnum.LOGIN
         },
       },
       {
         path: 'signup',
-        component: AuthComponent,
+        loadComponent: () => import('../app/libs/features/auth/auth/auth.component').then((c => c.AuthComponent)),
         data: {
           TYPE: AuthEnum.SIGN_UP
         },

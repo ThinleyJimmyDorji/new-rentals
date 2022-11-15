@@ -1,13 +1,11 @@
 import { Injectable } from '@angular/core';
-import {Router} from "@angular/router";
 import {MatSnackBar, MatSnackBarConfig} from "@angular/material/snack-bar";
 import {NotificationComponent} from "./notification/notification.component";
-import {TranslateService} from "@ngx-translate/core";
 
 export declare type alertType = 'success' | 'info' | 'warning' | 'error' | 'question';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NotificationService {
 
@@ -25,7 +23,7 @@ export class NotificationService {
     duration: 5000
   };
 
-  constructor(private snackBar: MatSnackBar, private router: Router, private translate: TranslateService) {
+  constructor(private snackBar: MatSnackBar) {
   }
 
   show(message: string | Array<string>, type: alertType = 'success', translate?: boolean): void {
@@ -56,8 +54,6 @@ export class NotificationService {
   info = (message: string | Array<string>, translate?: boolean): void => this.show(message, 'info', translate);
 
   question = (message: string | Array<string>, translate?: boolean): void => this.show(message, 'question', translate);
-
-  instantTranslate = (key: string): string => this.translate.instant(key);
 
   convertToHtml(messages: Array<string>): string {
     let message = '';
