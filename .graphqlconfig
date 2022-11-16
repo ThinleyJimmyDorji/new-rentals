@@ -3,11 +3,11 @@
   "schemaPath": "schema.graphql",
   "extensions": {
     "endpoints": {
-      "Staging": {
-        "url": "",
+      "Development": {
+        "url": "https://newrentals.tk/api/v1",
         "headers": {
           "user-agent": "JS GraphQL",
-          "Authorization": ""
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJjMGM5N2U2My1kN2RjLTQ1MDYtODFkMi0yNjNhMWY2ZmYwMTMiLCJzdWIiOiIyIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjY4NjA2NzA3LCJleHAiOjE2Njg2MTAzMDd9.k0XfQOfOdE2xgy1CXbB5nLBdqEj5xmhlo1_rEcXJEkY"
         },
         "introspect": true
       }

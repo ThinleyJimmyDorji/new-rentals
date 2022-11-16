@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  serverUrl: 'https://shadow-onehub.selise.tech/api/v1',
+  graphqlUrl: '/api/v1/graphql',
+  serverUrl: 'https://newrentals.tk/api/v1',
 };
 
 /*

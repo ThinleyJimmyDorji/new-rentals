@@ -5,6 +5,8 @@ import {ActivatedRoute, RouterModule} from "@angular/router";
 import {LoginComponent} from "../components/login/login.component";
 import {SignupComponent} from "../components/signup/signup.component";
 import {NotificationService} from "../../../modules/notification.service";
+import {tap} from "rxjs";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-auth',
@@ -16,9 +18,16 @@ import {NotificationService} from "../../../modules/notification.service";
 export class AuthComponent implements OnInit {
   componentType?: AuthType;
 
-  constructor(private activatedRoute: ActivatedRoute, private notificationService: NotificationService) { }
+  constructor(private activatedRoute: ActivatedRoute, private notificationService: NotificationService, private httpClient: HttpClient) {
+  }
 
   ngOnInit(): void {
+    debugger
+    debugger
+    const data = { email: 'tjd1@selise.ch', password: 'status200' };
+    this.httpClient.post('https://newrentals.tk/api/v1/users', { user: data} ).pipe(tap((response) => {
+      debugger
+    }, (e) => this.notificationService.error(e?.error?.['errors']?.[0]))).subscribe();
     this.activatedRoute.data.subscribe(value => (this.componentType = value['TYPE']));
   }
 

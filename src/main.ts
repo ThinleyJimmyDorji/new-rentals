@@ -11,6 +11,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {
   TranslateModule,
 } from "@ngx-translate/core";
+import {HttpClientModule} from "@angular/common/http";
+import {GraphQLModule} from "./app/graphql.module";
 
 if (environment.production) {
   enableProdMode();
@@ -21,6 +23,8 @@ bootstrapApplication(AppComponent, {
     importProvidersFrom(AppRoutingModule),
     importProvidersFrom(MatSnackBarModule),
     importProvidersFrom(BrowserAnimationsModule),
+    importProvidersFrom(HttpClientModule),
+    importProvidersFrom(GraphQLModule),
     importProvidersFrom(TranslateModule.forRoot()),
     {
       provide: NotificationService,
