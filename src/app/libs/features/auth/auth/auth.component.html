@@ -4,6 +4,9 @@
   </div>
   <div fxLayout="row" fxLayoutAlign="center center">
     <mat-card fxFlex="40" class="login-card">
+      <nr-landing-page
+        *ngSwitchCase="'landing'"
+      ></nr-landing-page>
       <app-login
         *ngSwitchCase="'login'"
       ></app-login>

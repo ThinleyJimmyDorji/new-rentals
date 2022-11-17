@@ -13,6 +13,13 @@ const routes: Routes = [
         path: '',
         loadComponent: () => import('../app/libs/features/auth/auth/auth.component').then((c => c.AuthComponent)),
         data: {
+          TYPE: AuthEnum.LANDING
+        },
+      },
+      {
+        path: 'login',
+        loadComponent: () => import('../app/libs/features/auth/auth/auth.component').then((c => c.AuthComponent)),
+        data: {
           TYPE: AuthEnum.LOGIN
         },
       },

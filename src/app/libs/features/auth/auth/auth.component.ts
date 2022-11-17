@@ -9,11 +9,12 @@ import {tap} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {MatCardModule} from "@angular/material/card";
 import {FlexLayoutModule} from "@angular/flex-layout";
+import {LandingPageComponent} from "../components/landing-page/landing-page.component";
 
 @Component({
   selector: 'app-auth',
   standalone: true,
-  imports: [CommonModule, LoginComponent, SignupComponent, RouterModule, MatCardModule, FlexLayoutModule],
+  imports: [CommonModule, LoginComponent, SignupComponent, RouterModule, MatCardModule, FlexLayoutModule, LandingPageComponent],
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.scss']
 })
@@ -24,8 +25,6 @@ export class AuthComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    debugger
-    debugger
     const data = { email: 'tjd1@selise.ch', password: 'status200' };
     // this.httpClient.post('https://newrentals.tk/api/v1/users', { user: data} ).pipe(tap((response) => {
     //   debugger
