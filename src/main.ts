@@ -8,11 +8,9 @@ import {RouterOutlet} from "@angular/router";
 import {AppRoutingModule} from "./app/app-routing.module";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {
-  TranslateModule,
-} from "@ngx-translate/core";
+import {TranslateModule} from "@ngx-translate/core";
 import {HttpClientModule} from "@angular/common/http";
-import {GraphQLModule} from "./app/graphql.module";
+// import {GraphQLModule} from "./app/graphql.module";
 
 if (environment.production) {
   enableProdMode();
@@ -24,11 +22,13 @@ bootstrapApplication(AppComponent, {
     importProvidersFrom(MatSnackBarModule),
     importProvidersFrom(BrowserAnimationsModule),
     importProvidersFrom(HttpClientModule),
-    importProvidersFrom(GraphQLModule),
+    // importProvidersFrom(GraphQLModule),
     importProvidersFrom(TranslateModule.forRoot()),
     {
       provide: NotificationService,
       useClass: NotificationService
     },
+    // {provide: BaseFacadeService, useClass: BaseFacadeService},
+    // {provide: BaseStateService, useClass: BaseStateService},
     {provide: RouterOutlet, useClass: RouterOutlet}]
 })

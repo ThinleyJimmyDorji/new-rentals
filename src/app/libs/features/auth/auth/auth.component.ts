@@ -25,9 +25,9 @@ export class AuthComponent implements OnInit {
     debugger
     debugger
     const data = { email: 'tjd1@selise.ch', password: 'status200' };
-    this.httpClient.post('https://newrentals.tk/api/v1/users', { user: data} ).pipe(tap((response) => {
-      debugger
-    }, (e) => this.notificationService.error(e?.error?.['errors']?.[0]))).subscribe();
+    // this.httpClient.post('https://newrentals.tk/api/v1/users', { user: data} ).pipe(tap((response) => {
+    //   debugger
+    // }, (e) => this.notificationService.error(e?.error?.['errors']?.[0]))).subscribe();
     this.activatedRoute.data.subscribe(value => (this.componentType = value['TYPE']));
   }
 

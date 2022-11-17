@@ -1,0 +1,16 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Mutation {
+  "An example field added by the generator"
+  testField: String!
+}
+
+type Query {
+  "An example field added by the generator"
+  testField: String!
+}

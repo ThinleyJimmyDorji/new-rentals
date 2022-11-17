@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "generate:interface": "graphql-codegen --config codegen.js"
+    "codegen": "graphql-codegen --config codegen.ts"
   },
   "private": true,
   "dependencies": {
@@ -22,17 +22,14 @@
     "@angular/platform-browser": "^14.2.0",
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
-    "@apollo/client": "^3.7.1",
-    "apollo-link": "^1.2.13",
-    "apollo-angular": "^4.1.0",
-    "apollo-angular-link-http": "^1.11.0",
-    "apollo-cache-inmemory": "^1.6.6",
-    "graphql": "^16.6.0",
+    "@apollo/client": "3.6.9",
+    "@codewithdan/observable-store": "^2.2.14",
+    "@ngx-translate/core": "^14.0.0",
+    "apollo-angular": "3.1.0",
+    "graphql": "^15",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "omit-deep-lodash": "^1.1.7",
-    "@codewithdan/observable-store": "^2.2.14",
-    "@ngx-translate/core": "^14.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

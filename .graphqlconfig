@@ -4,12 +4,12 @@
   "extensions": {
     "endpoints": {
       "Development": {
-        "url": "https://newrentals.tk/api/v1",
+        "url": "https://newrentals.tk/api/v1/graphql",
         "headers": {
           "user-agent": "JS GraphQL",
-          "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJjMGM5N2U2My1kN2RjLTQ1MDYtODFkMi0yNjNhMWY2ZmYwMTMiLCJzdWIiOiIyIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjY4NjA2NzA3LCJleHAiOjE2Njg2MTAzMDd9.k0XfQOfOdE2xgy1CXbB5nLBdqEj5xmhlo1_rEcXJEkY"
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI5OWIzMGY0Yi00MDY5LTQ5ODAtYjZmZC1hNjRkYmU5NjFkYmYiLCJzdWIiOiIxMyIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY2ODYxODcwOSwiZXhwIjoxNjY4NjIyMzA5fQ.-G1dD8PTHnz-Qqgej-OSTc_2LdEYZMXc7R9LaIZyoeA"
         },
-        "introspect": true
+        "introspect": false
       }
     }
   }

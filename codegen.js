@@ -3,7 +3,7 @@ module.exports = {
   documents: [],
   overwrite: true,
   generates: {
-    "path-here": {
+    "graphql.ts": {
       plugins: ["typescript"],
       config: {
         skipTypename: true,
