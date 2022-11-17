@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {AuthEnum} from "./libs/features/auth/models/auth.model";
 import {AuthWrapperComponent} from "./libs/features/auth/auth/auth-wrapper/auth-wrapper.component";
+import {LandingPageComponent} from "./libs/features/auth/components/landing-page/landing-page.component";
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'auth' },
+  // { path: '', pathMatch: 'full', redirectTo: 'auth' },
+  { path: 'home', pathMatch: 'full', component: LandingPageComponent },
   {
     path: '',
     component: AuthWrapperComponent,
