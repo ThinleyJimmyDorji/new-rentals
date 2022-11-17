@@ -1,0 +1,211 @@
+@import 'variables';
+@import 'mixins';
+// Typography
+
+h1 {
+  font-size: 22px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 16px 0;
+  color: $boulder-color;
+}
+
+.light-gray {
+  color: rgba($black-color, 0.38);
+}
+
+.gray-color {
+  color: rgba($black-color, 0.6);
+}
+
+.white-color {
+  color: $white-color;
+}
+
+.warn-color {
+  color: $warn-color !important;
+}
+
+.mat-error {
+  font-size: 12px !important;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.font-bold {
+  font-family: $bold-font;
+}
+
+.font-heavy {
+  font-family: $heavy-font;
+}
+
+.fit-content {
+  width: fit-content;
+}
+
+.border-bottom {
+  border-bottom: 1px solid $silver-color;
+}
+.border-top {
+  border-top: 1px solid $silver-color;
+}
+
+.faint-primary-bg {
+  background-color: $faint-primary-bg;
+}
+
+.mild-gray-bg {
+  background-color: $mild-gray;
+}
+
+.background-none {
+  background: none !important;
+}
+
+// Text Alignment
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+// Text Cases
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+// Modal utility classes
+
+.modal-lg {
+  width: 1200px;
+}
+
+.modal-md {
+  width: 800px;
+}
+
+.modal-sm {
+  width: 524px;
+}
+
+.full-width-modal {
+  @include nr-media('xs') {
+    height: 100% !important;
+    max-width: 100% !important;
+  }
+}
+.full-width {
+  width: 100%;
+}
+.hand-cursor,
+a {
+  cursor: pointer !important;
+}
+.pull-right {
+  float: right;
+}
+
+.mxn-24 {
+  margin: 0 -24px;
+}
+
+.mxn-24 {
+  margin: 0 -24px;
+}
+
+.pending {
+  color: $warn-color;
+}
+
+.completed,
+.ordered,
+.offer_shared {
+  color: $success-color;
+}
+
+.draft_order {
+  color: $info-color;
+}
+
+.proposed {
+  color: $accent-color;
+}
+
+.nr-accent-bg {
+  color: $white-color;
+  background: $accent-color;
+}
+//REVISIT-DECHEN-CHODEN: Remove once it is merged to common
+.position-absolute {
+  position: absolute;
+}
+
+.pull-left {
+  float: left;
+}
+
+.image-icon {
+  height: 20px;
+}
+
+.white-space {
+  &--nowrap {
+    white-space: nowrap;
+  }
+  &--pre {
+    white-space: pre;
+  }
+}
+
+.line-height--24 {
+  line-height: 24px;
+}

@@ -1,1 +1,58 @@
-<p>login works!</p>
+<div class="auth-login m-28" fxLayout="row wrap" fxLayoutAlign="center">
+  <p class="font-size-24 mt-0 mb-28 text-center">Sign in to NewRentals</p>
+
+  <div fxLayout="row wrap" fxLayoutAlign="space-between">
+    <mat-form-field appearance="outline" fxFlex="100" data-cy="email">
+      <mat-label>Email Address</mat-label>
+      <input matInput>
+      <!--
+            <mat-error>Email is in an invalid format.</mat-error>
+      -->
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" fxFlex="100" data-cy="password">
+      <mat-label>Password</mat-label>
+      <input matInput [type]="passwordVisibility ? 'password' : 'text'">
+      <i matSuffix class="pi {{passwordVisibility ? 'pi-eye' : 'pi-eye-slash'}} boulder-color s-20 hand-cursor"
+         [matTooltip]="(passwordVisibility ? 'Show Password' : 'Hide Password')"
+         (click)="passwordVisibility = !passwordVisibility"></i>
+    </mat-form-field>
+
+    <div class="full-width mb-8" fxLayout="row" fxLayoutAlign="space-between center">
+      <mat-checkbox tabIndex="-1" class="remember-me" aria-label="Remember Me" data-cy="rememberMe">
+        Remember Me
+      </mat-checkbox>
+      <a tabIndex="-1" class="pull-right" [routerLink]="'/auth/forgot-password'" data-cy="forgotPassword">
+        Forgot Password?
+      </a>
+    </div>
+
+  </div>
+  <button mat-flat-button color="primary" class="my-12 full-width" data-cy="login">Sign In</button>
+
+  <div fxFlex="100" fxLayout="row" fxLayoutAlign="center center" class="my-16">
+    <hr fxFlex="30"/>
+    <span>Or Sign In with</span>
+    <hr fxFlex="30"/>
+  </div>
+
+  <div fxFlex="100" fxLayoutAlign="space-between center">
+    <button fxFlex="48" mat-flat-button class="my-12 google-btn" data-cy="login">
+      <img class="auth-logo my-8" src="/assets/images/google.svg"/>
+
+    </button>
+    <button fxFlex="48" mat-flat-button class="my-12 facebook-btn" data-cy="login">
+      <img class="auth-logo my-8" src="/assets/images/facebook.svg"/>
+    </button>
+  </div>
+
+  <div class="text-center mt-12">Don't have an account?
+    <a [routerLink]="['/auth/signup']" data-cy="register">Create Account</a>
+  </div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,86 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+// Custom Color Palettes
+$nr-primary: (
+  50: #FFEBEE,
+  100: #FFCDD2,
+  200: #EF9A9A,
+  300: #E57373,
+  400: #EF5350,
+  500: #D7385E,
+  600: #E53935,
+  700: #D32F2F,
+  800: #DA291C,
+  900: #B71C1C,
+  A100: #FF8A80,
+  A200: #FF5252,
+  A400: #FF1744,
+  A700: #D50000,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text
+  )
+);
+
+$nr-accent: (
+  50: #FFF3E0,
+  100: #FFE0B2,
+  200: #FFCC80,
+  300: #FFB74D,
+  400: #FFA726,
+  500: #FF9800,
+  600: #FB8C00,
+  700: #EE742B,
+  800: #EF6C00,
+  900: #E65100,
+  A100: #FFD180,
+  A200: #FFAB40,
+  A400: #FF9100,
+  A700: #FF6D00,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $dark-primary-text,
+    600: $dark-primary-text,
+    700: $dark-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: black,
+  )
+);
+
+// Define the theme.
+$nr-app-primary: mat-palette($nr-primary, 500);
+$nr-app-accent: mat-palette($nr-accent, 700);
+$nr-app-warn: mat-palette($mat-red, 600);
+
+$nr-app-theme: mat-light-theme($nr-app-primary, $nr-app-accent, $nr-app-warn);
+$nr-primary-theme: mat-light-theme($nr-app-primary, $nr-app-primary, $nr-app-primary);
+
+// Include the theme styles for only specified components.;
+@include angular-material-theme($nr-app-theme);
+@include mat-slide-toggle-theme($nr-primary-theme);
+@include mat-checkbox-theme($nr-primary-theme);
+@include mat-radio-theme($nr-primary-theme);

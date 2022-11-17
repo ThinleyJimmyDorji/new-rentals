@@ -1,0 +1,27 @@
+<div fxLayout="row wrap" class="m-28">
+
+  <p class="font-size-24 text-center full-width">Create an Account</p>
+  <div fxFlex="100" class="text-center my-12">Already have an account?
+    <a [routerLink]="['/auth/signup']" data-cy="register">Sign In</a>
+  </div>
+  <p class="mb-28">How would you like to use the platform? You can always change your roles later. </p>
+
+  <mat-card class="mat-elevation-z0 nr-silver-border hand-cursor login-card" fxLayout="row"
+            fxLayoutAlign="start center" fxFlex="100">
+    <img class="mr-24 ml-8" src="/assets/images/user-icon.svg"/>
+    <div>
+      <h3 class="mb-4"> User</h3>
+      <p class="boulder-color mb-0">Look for apartments and add your property for rent.</p>
+    </div>
+  </mat-card>
+
+  <mat-card class="mat-elevation-z0 nr-silver-border mt-24 hand-cursor login-card" fxLayout="row"
+            fxLayoutAlign="start center" fxFlex="100">
+    <img class="mr-24 ml-8" src="/assets/images/landloard-icon.svg"/>
+    <div>
+      <h3 class="mb-4">As Landlord</h3>
+      <p class="boulder-color mb-0">Look for apartments and add your property for rent.</p>
+    </div>
+  </mat-card>
+  <button mat-flat-button color="primary" class="full-width mt-24">{{'Next' | translate}}</button>
+</div>

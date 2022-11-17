@@ -5,11 +5,13 @@ import {ActivatedRoute, RouterModule} from "@angular/router";
 import {LoginComponent} from "../components/login/login.component";
 import {SignupComponent} from "../components/signup/signup.component";
 import {NotificationService} from "../../../modules/notification.service";
+import {MatCardModule} from "@angular/material/card";
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 @Component({
   selector: 'app-auth',
   standalone: true,
-  imports: [CommonModule, LoginComponent, SignupComponent, RouterModule],
+  imports: [CommonModule, LoginComponent, SignupComponent, RouterModule, MatCardModule, FlexLayoutModule],
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.scss']
 })
