@@ -1,8 +1,15 @@
-<div [ngSwitch]="componentType">
-  <app-login
-    *ngSwitchCase="'login'"
-  ></app-login>
-  <app-signup
-    *ngSwitchCase="'signup'"
-  ></app-signup>
+<div class="login-container full-width" fxLayout="column" fxLayoutAlign="center center" [ngSwitch]="componentType">
+  <div>
+    <img class="auth-logo mb-28" src="/assets/images/logo.svg"/>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <mat-card fxFlex="40" class="login-card">
+      <app-login
+        *ngSwitchCase="'login'"
+      ></app-login>
+      <app-signup
+        *ngSwitchCase="'signup'"
+      ></app-signup>
+    </mat-card>
+  </div>
 </div>

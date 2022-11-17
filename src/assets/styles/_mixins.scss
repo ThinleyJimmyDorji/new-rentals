@@ -1,0 +1,163 @@
+@import 'variables';
+
+//border-radius
+@mixin nr-border-radius($radius-direction) {
+  @for $gap from 0 through 15 {
+    $radius: $gap * 4;
+
+    @each $space in $radius {
+      @each $side in $radius-direction {
+        .br-#{$side}-#{$space} {
+          border-#{$side}-radius: #{$space}px;
+        }
+      }
+      .br-#{$space} {
+        border-radius: #{$space}px;
+      }
+    }
+  }
+}
+
+//browser support
+@mixin nr-transition($transition) {
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  -webkit-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+@mixin nr-box-shadow($boxshadow) {
+  -moz-box-shadow: $boxshadow;
+  -webkit-box-shadow: $boxshadow;
+  -ms-box-shadow: $boxshadow;
+  box-shadow: $boxshadow;
+}
+
+//color utilities
+@mixin nr-colors() {
+  $theme-keys: primary, warn, accent, info, success, golden, nr-black, nr-white, nr-white-fade, nr-silver, boulder;
+  $theme-colors: (
+    'primary': $primary-color,
+    'warn': $warn-color,
+    'accent': $accent-color,
+    'info': $info-color,
+    'success': $success-color,
+    'golden': $gold-color,
+    'nr-black': $black-color,
+    'nr-white': $white-color,
+    'nr-white-fade': $white-fade,
+    'nr-silver': $silver-color,
+    'boulder': $boulder-color
+  );
+
+  @each $color in $theme-keys {
+    $color-hex: map-get($theme-colors, $color);
+    .#{$color}-border {
+      border: 1px solid $color-hex !important;
+    }
+    .#{$color}-bg {
+      background-color: $color-hex !important;
+    }
+    .#{$color}-color {
+      color: $color-hex !important;
+    }
+
+    .#{$color}-faint-bg {
+      background-color: rgba($color-hex, 0.12) !important;
+    }
+  }
+}
+
+//font-size
+@mixin nr-font-size($font-size) {
+  @each $size in $font-size {
+    .font-size-#{$size} {
+      font-size: #{$size}px;
+    }
+    //For icons
+    .s-#{$size} {
+      font-size: #{$size}px;
+      height: #{$size}px !important;
+      width: #{$size}px !important;
+    }
+  }
+}
+
+//margin
+@mixin nr-margin($space-amounts, $sides) {
+  @each $space in $space-amounts {
+    @each $side in $sides {
+      .m#{str-slice($side, 0, 1)}-#{$space} {
+        margin-#{$side}: #{$space}px !important;
+      }
+    }
+    .m-#{$space} {
+      margin: #{$space}px !important;
+    }
+    .mx-#{$space} {
+      margin-left: #{$space}px !important;
+      margin-right: #{$space}px !important;
+    }
+    .my-#{$space} {
+      margin-bottom: #{$space}px !important;
+      margin-top: #{$space}px !important;
+    }
+  }
+}
+
+// Re-map the breakpoints for the helper classes
+$helper-breakpoints: (
+  xs: 'xs',
+  sm: 'gt-xs',
+  md: 'gt-sm',
+  lg: 'gt-md',
+  xl: 'gt-lg'
+);
+
+@mixin nr-media($breakpointName) {
+  $mediaQuery: map-get($breakpoints, $breakpointName);
+
+  @if ($mediaQuery == null) {
+    @content;
+  }
+
+  @else {
+    @media #{$mediaQuery} {
+      @content;
+    }
+  }
+}
+
+//padding
+@mixin nr-padding($space-amounts, $sides) {
+  @each $space in $space-amounts {
+    @each $side in $sides {
+      .p#{str-slice($side, 0, 1)}-#{$space} {
+        padding-#{$side}: #{$space}px !important;
+      }
+    }
+    .p-#{$space} {
+      padding: #{$space}px;
+    }
+    .px-#{$space} {
+      padding-left: #{$space}px;
+      padding-right: #{$space}px;
+    }
+    .py-#{$space} {
+      padding-bottom: #{$space}px;
+      padding-top: #{$space}px;
+    }
+  }
+}
+
+//v-align
+@mixin nr-valign() {
+  $alignment: middle, bottom, super, sub, text-top, text-bottom, top;
+
+  @each $valign in $alignment {
+    .ver-#{$valign} {
+      vertical-align: $valign !important;
+    }
+  }
+}

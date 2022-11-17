@@ -18,7 +18,7 @@ if (environment.production) {
 
 bootstrapApplication(AppComponent, {
   providers: [
-    importProvidersFrom(AppRoutingModule),
+    importProvidersFrom(AppRoutingModule, BrowserAnimationsModule),
     importProvidersFrom(MatSnackBarModule),
     importProvidersFrom(BrowserAnimationsModule),
     importProvidersFrom(HttpClientModule),

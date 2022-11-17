@@ -1,0 +1,424 @@
+@import 'variables';
+@import 'mixins';
+
+.mat-option-text img {
+  margin-right: 8px !important;
+  vertical-align: sub !important;
+}
+
+mat-sidenav-container {
+
+  .mat-drawer-content {
+    height: 100vh;
+  }
+}
+
+.profile-picture .upload-pic input[type='file'] {
+  height: 0;
+  width: 0;
+}
+
+button {
+  &.mat-flat-button, &.mat-stroked-button {
+    @include nr-media('lt-sm') {
+      padding: 1px 12px !important;
+    }
+
+    border-radius: $radius !important;
+    font-size: 16px;
+    min-width: 146px !important;
+    padding: 2px 26px !important;
+    text-transform: uppercase;
+
+    &:focus,
+    &:hover,
+    &:active {
+      outline-width: 0 !important;
+    }
+
+    &.primary-color {
+
+      .mat-button-wrapper {
+        color: $primary-color !important;
+      }
+    }
+  }
+}
+
+
+.sf-link:focus,
+.sf-button:focus {
+  outline-width: 0 !important;
+}
+
+mat-form-field:not(.discussion-chat) {
+
+  .mat-form-field-wrapper .mat-form-field-infix {
+    padding: 6px 0 14px !important;
+
+    label {
+      top: 23px !important;
+    }
+
+    .mat-select-arrow-wrapper {
+      transform: translateY(0) !important;
+    }
+  }
+}
+
+.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+  transform: translateY(-21px) scale(0.75) !important;
+}
+
+mat-paginator {
+  @include nr-media(gt-sm) {
+    height: 64px;
+  }
+
+  mat-form-field .mat-form-field-wrapper .mat-form-field-infix {
+    padding: 0 0 2px !important;
+  }
+}
+
+.search .mat-form-field-appearance-outline {
+
+  .mat-form-field-outline {
+    background: $mild-gray;
+    border-radius: 8px;
+    color: transparent;
+  }
+
+  .mat-form-field-infix {
+    padding: 13px 0;
+  }
+
+  .mat-form-field-wrapper {
+    padding-bottom: 0;
+  }
+
+  .mat-form-field-prefix {
+    top: 0 !important;
+  }
+}
+
+.search .mat-focused .mat-form-field-outline {
+  background: $white-color !important;
+  $box-shadow: 0 3px 1px -2px rgba($black-color, 0.14), 0 2px 2px 0 rgba($black-color, 0.098), 0 1px 5px 0 rgba($black-color, 0.084);
+  @include nr-box-shadow($box-shadow);
+}
+
+.mat-drawer-content.mat-sidenav-content {
+  background-color: $mild-gray !important;
+}
+
+.chip-input-tag .mat-chip-list-wrapper .mat-chip {
+  padding: 0 12px !important;
+}
+
+.mobile-search {
+  display: none !important;
+}
+
+.mat-dialog-container {
+  padding: 24px 0 !important;
+
+  mat-dialog-content {
+    margin: 0;
+  }
+
+  @include nr-media('xs') {
+    border-radius: 0 !important;
+  }
+
+  mat-dialog-content,
+  .modal-content {
+    height: 100%;
+
+    &.p-0 {
+      padding: 0 !important;
+    }
+
+    @include nr-media('lt-md') {
+      height: unset !important;
+      max-height: unset !important;
+      overflow-y: visible !important;
+    }
+  }
+
+  .mat-dialog-actions {
+    padding: 16px 24px;
+
+    @include nr-media('xs') {
+
+      button {
+        width: 100% !important;
+      }
+    }
+  }
+}
+
+button,
+mat-card {
+  border-radius: $radius;
+}
+
+/* Overwriting default material's inline-block which is causing issue with flex */
+
+.mat-form-field-type-mat-select {
+  display: unset !important;
+}
+
+/* overwrting default styles for sf-tab */
+
+.custom-tab {
+  @include nr-media(gt-sm md) {
+    border-radius: $radius;
+  }
+
+  .mat-tab-label .mat-tab-label-content {
+    font-family: $heavy-font;
+  }
+
+  @include nr-media(lt-sm) {
+    border-bottom-left-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
+  }
+}
+
+/* Overwriting search issue in small devices */
+
+.search-bar {
+  width: 380px !important;
+
+  @include nr-media('xs') {
+    display: flex !important;
+    width: calc(100vw - 54px) !important;
+  }
+}
+
+/* overwrting mat button-toggle */
+
+.mat-button-toggle-group {
+  border-radius: $radius !important;
+
+  .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+    line-height: 36px;
+    max-height: 40px;
+    padding: 2px 26px;
+  }
+}
+
+.mat-button-toggle-checked {
+  background-color: $primary-color;
+  color: $white-color !important;
+}
+
+@include nr-media('lt-sm') {
+
+  .mat-dialog-actions .mat-button-base {
+    margin-left: 0 !important;
+  }
+}
+
+button {
+  text-shadow: none;
+}
+
+button:not(.mat-icon-button):not(.mat-button-toggle-button):not(.mat-sort-header-button):not(.mat-mini-fab):not(.remarks-button):not(.add-billing-addresses ) {
+  border-radius: 8px;
+  min-height: 40px !important;
+  min-width: 130px !important;
+  padding: 2px 26px;
+  text-transform: uppercase;
+}
+
+mat-tab-group {
+
+  .mat-tab-label {
+    text-transform: uppercase;
+  }
+
+  .mat-tab-body-content {
+    overflow: hidden !important;
+  }
+}
+
+.modal-sm {
+
+  &.discussion-modal .mat-dialog-container {
+    border-radius: 0;
+    padding-top: 20px !important;
+
+    .mat-form-field-appearance-outline {
+
+      .mat-form-field-wrapper {
+        padding-bottom: 0;
+
+        .mat-form-field-infix {
+          border-top: none;
+        }
+      }
+    }
+  }
+
+  &.discussion-modal {
+    height: 100vh;
+  }
+
+  &.mobile-stepper {
+    @include nr-media(lt-sm) {
+
+      .customer-creation-stepper {
+        display: block !important;
+      }
+
+      .content {
+        margin: 0 !important;
+      }
+    }
+
+    .stepper,
+    .customer-creation-footer {
+      display: none;
+    }
+  }
+}
+
+.mat-table:not(.mat-calendar-table):not(.price-list-table) {
+
+  .mat-row:not(.edit-price-row) {
+    height: 64px;
+
+    .mat-header-cell {
+      font-size: 18px !important;
+    }
+  }
+}
+
+hr:nth-of-type(odd) {
+  border: 0.4px solid $alto-gray;
+}
+
+mat-paginator .mat-paginator-container {
+  @include nr-media(gt-sm) {
+    justify-content: space-between !important;
+    padding: 0 20px;
+  }
+
+  @include nr-media(lt-sm) {
+    margin-top: 8px;
+    margin-bottom: 20px;
+
+    .mat-paginator-range-label {
+      margin-right: 4px;
+      white-space: nowrap;
+    }
+  }
+}
+
+mat-radio-group mat-radio-button {
+  line-height: 20px;
+
+  .mat-radio-label-content {
+    padding-left: 10px;
+  }
+}
+
+mat-slide-toggle .mat-slide-toggle-content {
+  color: $boulder-color;
+  font-family: $bold-font;
+}
+
+.mat-snack-bar-container {
+  background-color: transparent;
+  height: 0;
+  position: fixed;
+  right: 0;
+  top: -10px;
+}
+
+mat-tab-group mat-tab-header .mat-tab-label-container {
+  overflow-x: auto;
+}
+
+.release-list-container ::-webkit-scrollbar,
+.cdk-overlay-container ::-webkit-scrollbar, .mat-tab-group ::-webkit-scrollbar {
+  display: none;
+}
+
+.mat-select-panel-wrap ::-webkit-scrollbar {
+  display: initial !important;
+}
+
+mat-checkbox .mat-checkbox-layout {
+  white-space: pre-wrap;
+
+  .mat-checkbox-label {
+    padding-top: 4px;
+  }
+}
+
+.mat-dialog-content {
+  max-height: 82vh;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@keyframes spinner {
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner::before {
+  animation: spinner 0.8s linear infinite;
+  border: 2px solid #FFF;
+  border-radius: 50%;
+  border-top-color: #000;
+  box-sizing: border-box;
+  content: '';
+  height: 20px;
+  left: 50%;
+  margin-left: -10px;
+  margin-top: -10px;
+  position: absolute;
+  top: 50%;
+  width: 20px;
+}
+
+.mat-header-cell {
+  font-size: 16px !important;
+}
+
+.mat-card .mat-divider-horizontal {
+  position: relative;
+}
+
+.financial-price, .vpn-analysis, .site-level-addons, .variant-edit-modal, .addons-edit-modal {
+  .mat-form-field-appearance-outline .mat-form-field-suffix {
+    top: 0 !important;
+  }
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+}
+
+.mat-icon {
+  font-size: 20px;
+}
+
+.mat-form-field {
+  line-height: 1.3 !important;
+}
+
+.modal-loader .mat-dialog-container {
+  padding-top: 0 !important;
+}

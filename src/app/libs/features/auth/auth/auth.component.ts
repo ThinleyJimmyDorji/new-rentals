@@ -7,11 +7,13 @@ import {SignupComponent} from "../components/signup/signup.component";
 import {NotificationService} from "../../../modules/notification.service";
 import {tap} from "rxjs";
 import {HttpClient} from "@angular/common/http";
+import {MatCardModule} from "@angular/material/card";
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 @Component({
   selector: 'app-auth',
   standalone: true,
-  imports: [CommonModule, LoginComponent, SignupComponent, RouterModule],
+  imports: [CommonModule, LoginComponent, SignupComponent, RouterModule, MatCardModule, FlexLayoutModule],
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.scss']
 })

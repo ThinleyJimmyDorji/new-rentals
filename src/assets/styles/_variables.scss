@@ -1,0 +1,63 @@
+/* Color Variables */
+$primary-color: #D7385E;
+$accent-color: #EE742B;
+$porcelain-gray: #F3F5F6;
+$smoke-white: #F5F5F5;
+$light-cyan: #E7F8FD;
+$faint-primary-bg: #EAF2F2;
+$warn-color: #C62828 !default;
+$white-color: #FFF;
+$white-fade: #F0EEF3;
+$black-color: #000;
+$dove-gray: #636262;
+$success-color: #1A4 !default;
+$gold-color: #FFC008 !default;
+$info-color: #5E94C5;
+$mild-gray: #F2F2F2;
+$boulder-color: #757575;
+$dusty-gray: #9B9B9B;
+$silver-color: #CCC;
+$alto-gray: #E0E0E0;
+$athens-gray: #EEE;
+$albaster-gray: #FAFAFA;
+$silver-chalice: #C9CEDA;
+$sweet-pink: #DE849E;
+$blue-haze: #5E94C5;
+$green-cloud: #99B2AF;
+$peach-fog: #C48D8A;
+$green-dragonfly: #64A88D;
+$orange-salmon: #CF7D5A;
+$pink-tickled: #962C4A;
+$pink-fade: #DE849E14;
+$rosy-light: #C48D8A14;
+$blue-gray: #5E94C514;
+$cadet-gray: #99B2AF14;
+$rich-black: #00000099;
+
+/* Fonts */
+$regular-font: 'AvenirLTPro_Light', sans-serif;
+$heavy-font: 'AvenirLTPro_Medium', sans-serif;
+$bold-font: 'AvenirNextLTPro_Regular', sans-serif;
+$radius: 8px;
+$material-icon-outline: 'Material Icons Outlined';
+$radius-direction: (top-left, top-right, bottom-right, bottom-left);
+$font-size: (12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32);
+$space-amounts: (0, 2, 6, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 42, 44, 48, 52, 56, 60);
+$sides: ('top', 'bottom', 'left', 'right');
+
+// Media query
+$breakpoints: (
+  xs: 'screen and (max-width: 599px)',
+  sm: 'screen and (min-width: 600px) and (max-width: 959px)',
+  md: 'screen and (min-width: 960px) and (max-width: 1279px)',
+  lg: 'screen and (min-width: 1280px) and (max-width: 1919px)',
+  xl: 'screen and (min-width: 1920px) and (max-width: 5000px)',
+  lt-sm: 'screen and (max-width: 599px)',
+  lt-md: 'screen and (max-width: 959px)',
+  lt-lg: 'screen and (max-width: 1279px)',
+  lt-xl: 'screen and (max-width: 1919px)',
+  gt-xs: 'screen and (min-width: 600px)',
+  gt-sm: 'screen and (min-width: 960px)',
+  gt-md: 'screen and (min-width: 1280px)',
+  gt-lg: 'screen and (min-width: 1920px)'
+) !default;

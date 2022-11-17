@@ -2,3 +2,25 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@import "~primeicons/primeicons.css";
+body {
+  margin: 0;
+}
+
+@import 'assets/styles/mixins';
+@import 'assets/styles/variables';
+@import 'assets/styles/theming';
+@import 'assets/styles/common';
+@import 'assets/styles/overwrite';
+@import 'assets/styles/utility';
+//@import 'assets/styles/font';
+
+@include nr-colors;
+@include nr-border-radius($radius-direction);
+@include nr-margin($space-amounts, $sides);
+@include nr-padding($space-amounts, $sides);
+@include nr-font-size($font-size);
+@include nr-valign;
+
+$authBgImagePath: 'assets/images/login-bg.jpg';

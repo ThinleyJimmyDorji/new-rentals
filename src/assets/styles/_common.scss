@@ -1,0 +1,445 @@
+@import 'mixins';
+
+body {
+  background-color: rgba($primary-color, 0.04) !important;
+  height: fit-content !important;
+  overflow: hidden !important;
+}
+
+p {
+  margin: 16px 0;
+}
+
+* {
+  font-family: $bold-font;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+::-webkit-scrollbar {
+  background-color: $athens-gray;
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @include nr-box-shadow(inset 0 0 6px rgba($black-color, 0.3));
+
+  background-color: $athens-gray;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-image:
+    -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0.44, $dusty-gray),
+      color-stop(0.66, $dusty-gray),
+      color-stop(0.77, $dusty-gray)
+    );
+  border-radius: 10px;
+}
+
+/* This is common style for three components i.e, user, contact and nni address */
+
+.addresses-section {
+
+  .mat-chip.mat-standard-chip {
+    background-color: $mild-gray;
+  }
+}
+
+hr {
+  border: 0.6px solid $alto-gray;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+}
+
+.header-container {
+  position: relative;
+}
+
+.light-bg:hover {
+  background-color: lighten($primary-color, 48%);
+}
+
+@include nr-media(lt-md) {
+
+  .customer-detail-edit .edit-btn {
+    display: contents;
+  }
+}
+
+@include nr-media(gt-sm) {
+
+  .customer-detail-edit {
+
+    .edit-btn {
+      display: none;
+    }
+
+    .light-bg:hover {
+      background-color: lighten($primary-color, 48%) !important;
+
+      .edit-btn {
+        display: inline-table;
+        transition: 0.2s;
+
+        &:hover {
+          background-color: $athens-gray;
+        }
+      }
+    }
+  }
+}
+
+@mixin responsive-table {
+
+  .mat-table[nrMatTableResponsive] {
+
+    .mat-header-row {
+      height: auto;
+
+      th.mat-header-cell {
+
+        &:not([mat-sort-header]),
+        &.mat-sort-header-disabled,
+        &.mat-column-actions {
+          display: none !important;
+        }
+      }
+    }
+
+    .mat-row {
+      height: auto;
+
+      td.mat-cell {
+        background-color: $white-color;
+
+        &:first-of-type {
+          border-radius: 8px 8px 0 0 !important;
+        }
+
+        &:last-of-type {
+          border-radius: 0 0 8px 8px;
+          margin-bottom: 16px;
+        }
+
+        &:not(.mat-column-actions) {
+          display: grid;
+          grid-template-columns: 50% 50%;
+          padding: 12px;
+          text-align: right;
+
+          > * {
+            grid-column: 2;
+          }
+
+          &::before {
+            content: attr(data-column-name);
+            font-family: $heavy-font;
+            text-align: left;
+          }
+        }
+
+        &:not(:nth-of-type(2)) {
+          border: none !important;
+        }
+      }
+    }
+  }
+}
+
+.customer-list,
+.child-services-list {
+  @include nr-media('lt-md') {
+    @include responsive-table;
+  }
+}
+
+.quotes-orders-table,
+.service-list-table,
+.footprint-log {
+  @include nr-media('lt-md') {
+    @include responsive-table;
+
+    .mat-table,
+    mat-paginator {
+      background-color: $mild-gray !important;
+    }
+  }
+}
+
+.content {
+  margin-top: 16px;
+
+  @include nr-media('xs') {
+    margin: 56px 0;
+  }
+}
+
+.edit-icons,
+.delete-icon {
+  border-radius: 20px;
+  display: inline-table !important;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: $athens-gray;
+  }
+}
+
+.add-icon {
+  height: 27px !important;
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.addresses-section, .billing-account,
+.user-address {
+  @include nr-media('gt-md') {
+    &:nth-child(3n) {
+      margin-right: 0 !important;
+    }
+  }
+
+  @include nr-media('sm') {
+    &:nth-child(2n) {
+      margin-right: 0 !important;
+    }
+  }
+}
+
+sup {
+  color: $warn-color;
+  line-height: 0;
+  padding-left: 3px;
+  position: relative;
+  vertical-align: baseline;
+}
+
+mat-icon {
+  font-family: $material-icon-outline;
+}
+
+.page-not-found {
+  height: 100vh;
+
+  .error-title {
+    height: 130px;
+  }
+
+  .error-image {
+    height: 300px;
+  }
+}
+
+.faint-primary-bg {
+  background: $faint-primary-bg;
+}
+
+.filter-container {
+  @include nr-box-shadow(0 4px 10px rgba($black-color, 0.25));
+
+  animation: slidein 0.3s;
+  left: 24px;
+  right: 24px;
+  position: absolute;
+  top: 83%;
+  width: 567px;
+  z-index: 3;
+}
+
+.custom-filter {
+  width: auto;
+  right: 24px;
+}
+
+@include nr-media(xs) {
+
+  .filter-container-mobile {
+    max-width: 89%;
+    top: 44% !important;
+  }
+
+  .add-customer {
+    $box-shadow: 2px -3px 5px -6px rgba($black-color, 0.8);
+
+    @include nr-box-shadow($box-shadow);
+
+    bottom: -2px;
+    left: 0;
+    position: fixed;
+    z-index: 999;
+  }
+}
+
+@keyframes slidein {
+
+  from {
+    margin-top: -30px;
+  }
+
+  to {
+    margin-top: 0;
+  }
+}
+
+@mixin cpe-table {
+
+  .cpe-table {
+
+    .mat-header-row,
+    th {
+      height: 52px;
+    }
+
+    tr {
+
+      &.edit-price-row {
+        height: 0 !important;
+      }
+
+      &:last-of-type td.mat-cell {
+        border-bottom: none;
+      }
+    }
+
+    .edit-cpe-price {
+      display: flex;
+      overflow: hidden;
+    }
+
+    .cpe-content-row {
+
+      td {
+        border-bottom-width: 0;
+      }
+
+      &:not(.cpe-expanded-row):hover {
+        background: $light-cyan;
+      }
+    }
+
+    ::ng-deep.mat-form-field-wrapper {
+      padding-bottom: 0 !important;
+    }
+  }
+}
+
+.empty-data {
+  height: 60vh;
+}
+
+.no-attachment {
+  height: 25vh;
+}
+
+.custom-mat-accordion {
+
+  mat-accordion {
+
+    & .mat-expansion-panel-spacing:first-child {
+      margin-top: 20px;
+    }
+
+    .mat-expansion-panel {
+      border-radius: 8px !important;
+      margin-top: 20px !important;
+
+      .mat-expansion-panel-header {
+        height: 64px !important;
+      }
+
+      &:not(.mat-expanded) .mat-expansion-panel-header {
+
+        &:hover:not([aria-disabled='true']) {
+          background: lighten($primary-color, 48%);
+        }
+
+        &.mat-expansion-toggle-indicator-before .mat-expansion-indicator {
+          margin: 0 16px 8px 0 !important;
+        }
+      }
+    }
+  }
+}
+
+.fixed-header {
+  $boxshadow: 0 0.1px 2px 0 rgba($black-color, 0.24);
+
+  @include nr-box-shadow($boxshadow);
+
+  z-index: 999;
+
+  @include nr-media(lt-md) {
+    width: 100%;
+  }
+}
+
+.mat-card {
+  border-radius: 8px !important;
+}
+
+.upload-file {
+  background: $porcelain-gray;
+
+  .select-file {
+    border: 2px dashed $alto-gray;
+    height: 110px;
+
+    button {
+      max-height: 32px !important;
+    }
+  }
+}
+
+$colors: success, accent, red;
+$colorsMap: (success: $success-color, accent: $accent-color, red: $warn-color);
+
+::ng-deep .status-drop-list {
+  @each $color in $colors {
+    .#{$color}-color {
+
+      .mat-select-value {
+        color: map-get($colorsMap, $color) !important;
+      }
+    }
+  }
+
+  .mat-form-field-wrapper {
+    padding-bottom: 0;
+  }
+}
+
+.billing-account {
+  &__sunrise {
+    color: $sweet-pink;
+    background-color: rgba($sweet-pink, 0.08);
+  }
+
+  &__upc {
+    color: $blue-haze;
+    background-color: rgba($blue-haze, 0.08);
+  }
+}
+
+.google-btn {
+  background: lighten($primary-color, 45%)  ;
+}
+
+.facebook-btn {
+  background:  lighten(#1877F2, 45%);
+}
